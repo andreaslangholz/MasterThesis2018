@@ -40,7 +40,7 @@ source("1Functions.R")
 #### 2. Parameters #####
 # Description:
 # Load Initial exogenous parameters
-source(".Parameters.R")
+source("2Parameters.R")
 
 #### 3. Data #####
 # Description:
