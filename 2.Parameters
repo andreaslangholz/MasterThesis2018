@@ -1,3 +1,13 @@
+################################################################
+# "Danish Labour Supply with Human Capital -                   #
+# Evidence from a Structural Life-Cycle Model"                 #
+# By: Andreas Als Langholz                                     #  
+# Thesis for M.sc. in Economics 2018                           #
+################################################################
+
+################################################################
+# File 2: Exogenous parameters                                 #
+################################################################
 
 ### Exogenous parameters  ####
 px <- data.frame(1)
