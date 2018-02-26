@@ -12,6 +12,17 @@
 DATA.P <- DATA.FS
 df.p <- DATA.P
 
+
+#### Tables in latex format #############
+xtable(outwh,digits  = c(rep(4,3*5+1)))
+xtable(outjl,digits  = c(rep(4,3*5+1)))
+xtable(outubp,digits = c(rep(4,3*5+1)))
+xtable(outubf,digits = c(rep(4,3*5+1)))
+xtable(outded,digits = c(rep(4,3*5+1)))
+xtable(df.tt.out)
+xtable(df.bi.out)
+
+### Plots with ggplot2 ###############
 df.p$Education <- ifelse(df.p$edu=="Ufaglærte", "Unskilled",
                        ifelse(df.p$edu=="Faglærte", "Skilled",
                               ifelse(df.p$edu=="KVU", "Short HE",
@@ -580,3 +591,32 @@ ggplot(wqt, aes(x=Ag,y=meand, group = interaction(Education,Type),color = Educat
   facet_wrap(~Education, ncol =2, scales = "free_y") +
   ylab("Mean Deductions") + 
   xlab("Normalized Assets")  
+
+
+
+#########################################
+ ### ELASTICITY PLOTS #################
+############################################
+
+df.el.out$Education = ifelse(df.el.out$Education == "LVU", "Long HE",
+                             ifelse(df.el.out$Education == "MVU", "Medium HE",
+                                    ifelse(df.el.out$Education == "KVU", "Short HE",
+                                           ifelse(df.el.out$Education == "Faglærte", "Skilled",
+                                                  ifelse(df.el.out$Education == "Ufaglærte", "Unskilled",NA)))))
+
+
+ggplot(df.el.out, aes(x=Age,y=el.s,group = interaction(Education,Type), color = Education)) + 
+  geom_line(size=0.5) +
+  geom_point(aes(shape = Education),size=0.5) +
+  theme_minimal()+  
+  facet_wrap(~Type, ncol=3, scales="free")  +
+  ylab("Elasticities") +
+  xlab("Age")
+
+ggplot(df.el.out, aes(x=Age,y=el,group = interaction(Education,Type), color = Education)) + 
+  geom_line() +
+  geom_point(aes(shape = Education)) +
+  theme_minimal()+  
+  facet_wrap(~Type, ncol=1)  +
+  xlab("Elasticities") +
+  ylab("Age")
