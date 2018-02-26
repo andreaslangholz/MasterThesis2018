@@ -5,5 +5,6 @@ by Andreas Langholz
 
 The model is programmed from scratch in R v.3.4.3, with an additional SAS script for the initial  data generation process. The data is from Danish registers at Statistics Denmark, supplied by the Danish Ministry of Finance - Office for Labour Market Policy through the Lovmodel agreement. Due to data sensitivy, the full dataset cannot be supplied, but all parameters for simulation purposes are available in the paper. 
 
-Feel free to contact me regarding the model at langholz.a@gmail.com
+Feel free to contact me regarding the model at langholz.a@gmail.com.
+
 Enjoy!
