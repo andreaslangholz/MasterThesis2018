@@ -151,13 +151,12 @@ UnemBen <- function(t, k, h, px, p1){
   # Vectorized conditionals
   # Unemployed
   ub <- ifelse(h == 1,
-               ifelse(ubf > 10^5,ubf,10^5),
+               ubf ,
                
                # Part time employed 
-               
+   
                ifelse(h %in% part.t,
-                      ifelse(ubp > 10^5/2, ubp, 10^5/2),
-                      0))
+                      , ubp,  0))
   
   return(ub)
 }
