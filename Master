@@ -40,19 +40,19 @@ source("1Functions.R")
 #### 2. Parameters #####
 # Description:
 # Load Initial exogenous parameters
-source("6Parameters.R")
+source(".Parameters.R")
 
 #### 3. Data #####
 # Description:
 # Prepares additional variables used in the model and
 # construct markov transition matrices
-source("2DataPrep.R")
+source("3Data.R")
 
 #### 4. First step #####
 # Description:
 # Runs the first step estimations over the education groups
 # outputs the parameterset for to use as input in MLE
-source("FirstStep.R")
+source("4FirstStep.R")
 
 #### 5. Maximum likelihood ##### 
 # Description: 
@@ -60,14 +60,14 @@ source("FirstStep.R")
 # with an outer BHHH hill-climbing algorithm
 # OBS: Due to the long estimation time, each education group
 # should be declared manually before running the script
-source("Estimation.R")
+source("4Estimation.R")
 
 #### 6. Simulation ##### 
 # Description: 
 # Simulates the estimates of elasticities and the tax/basic income experiments
-source("Simulations.R")
+source("6Simulations.R")
 
 #### 7. Outputs ##### 
 # Description: 
 # Outputs graphs and tables for use in paper
-source("Outputs.R")
+source("7Outputs.R")
