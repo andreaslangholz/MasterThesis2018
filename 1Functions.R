@@ -739,13 +739,13 @@ EGM <- function(A, t, n.r, n.c, n.v, h, k, k.markov, pm, px, p1, Sim){
   V <- V[-ind.out]
   
   # Detect non-monotonicity in the endogenous grid and run upper envelope refinement if found
-  # if(sum(diff(M)<0)>0){
-  #   UE <- UpperEnvelope(C,V,M,px)
-  #   C <- UE$C
-  #   M <- UE$M
-  #   V <- UE$V
-  # }
-  # 
+  if(sum(diff(M)<0)>0){
+     UE <- UpperEnvelope(C,V,M,px)
+     C <- UE$C
+     M <- UE$M
+     V <- UE$V
+  }
+   
   # Combine in dataframe and return
   out <- data.frame("C" = C, "V" = V, "M" = M)
   return(out)
